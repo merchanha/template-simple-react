@@ -1,18 +1,41 @@
+import React from 'react';
 
+import Inicio from './components/Inicio';
+import Blog from './components/Blog';
+import Formulario from './components/Formulario';
 import Header from './components/Header';
-import Carrousel from './components/Carrousel';
-import Cards from './components/Cards';
-import Footer from './components/Footer';
+
+import { BrowserRouter as Router, NavLink, Switch, Route } from 'react-router-dom';
+
 
 function App() {
   return (
     <div className="container-fluid">
-    
-     <Header/>
-     <Carrousel/>
-     <Cards/>
-     <Footer/>
-    
+
+      <Router>
+
+      <Header/>
+
+      
+        <Switch>
+          <Route exact path="/">
+            <Inicio/>
+
+          </Route>
+          <Route exact path="/Blog">
+            <Blog />
+
+
+          </Route >
+          <Route exact path="/Formulario">
+            <Formulario />
+
+          </Route>
+        </Switch>
+      </Router>
+
+     
+
     </div>
   );
 }
